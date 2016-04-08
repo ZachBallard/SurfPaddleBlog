@@ -1,15 +1,15 @@
-﻿body {
+﻿/*body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
+ Set padding to keep content from hitting the edges 
+*.body-content {
     padding-left: 15px;
     padding-right: 15px;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
+Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
 .dl-horizontal dt {
@@ -21,4 +21,49 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+p{
+	padding: 10px 0px 0px 0px;
+}
+.headeroverall{
+	background-image:url("https://unsplash.it/500/370?image=1014");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	text-align:center;
+	font-family: cursive;
+	color:white;
+	text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	padding: 10% 0%;
+	width: 100%;
+}
+.headertext{
+	font-size: 50px;
+}
+.underheadertext{
+	color: black;
+	text-shadow:-1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+	font-size: 20px;
+}
+.imgsize{
+	width: 25%;
+	height: 200px;
+	float: left;
+}
+.whiteonblack{
+	background-color: black;
+	color:white;
+}
+.smalltext{
+	font-size:8px;
+}
+.bottompadding{
+	padding: 10px 0px;
+}
+.containerborder{
+	border-left: 1px solid grey;
+	border-right: 1px solid grey;
+	border-bottom: 1px solid grey;
+	margin: 0px 1px;
+	width: 100%;
 }
