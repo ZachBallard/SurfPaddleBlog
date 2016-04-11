@@ -45,6 +45,11 @@ p{
 	text-shadow:-1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 	font-size: 20px;
 }
+.adimage{
+    width: 200px;
+    height: 250px;
+    float: left;
+}
 .imgsize{
 	width: 25%;
 	height: 200px;
@@ -58,7 +63,8 @@ p{
 	font-size:8px;
 }
 .bottompadding{
-	padding: 10px 0px;
+	padding: 10px 5%;
+
 }
 .containerborder{
 	border-left: 1px solid grey;

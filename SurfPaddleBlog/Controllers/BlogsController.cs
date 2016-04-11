@@ -17,7 +17,8 @@ namespace SurfPaddleBlog.Controllers
         // GET: Blogs
         public ActionResult Index()
         {
-            return View(db.Blogs.ToList());
+            var blogList = db.Blogs.ToList();
+            return View(blogList);
         }
 
         // GET: Blogs/Details/5
@@ -50,6 +51,7 @@ namespace SurfPaddleBlog.Controllers
         {
             if (ModelState.IsValid)
             {
+                blog.PostTime = DateTime.Now;
                 db.Blogs.Add(blog);
                 db.SaveChanges();
                 return RedirectToAction("Index");

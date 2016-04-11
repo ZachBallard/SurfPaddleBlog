@@ -19,6 +19,6 @@ namespace SurfPaddleBlog.Models
         {
         }
 
-        public System.Data.Entity.DbSet<SurfPaddleBlog.Models.Blog> Blogs { get; set; }
+        public DbSet<Blog> Blogs { get; set; }
     }
 }
