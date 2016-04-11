@@ -17,7 +17,7 @@ namespace SurfPaddleBlog.Controllers
         // GET: Blogs
         public ActionResult Index()
         {
-            var blogList = db.Blogs.ToList();
+            var blogList = db.Blogs.OrderByDescending(x => x.PostTime).ToList();
             return View(blogList);
         }
 
