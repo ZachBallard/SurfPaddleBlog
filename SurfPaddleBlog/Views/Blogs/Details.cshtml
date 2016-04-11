@@ -1,4 +1,4 @@
-﻿@model SurfPaddleBlog.Models.Blog
+﻿@model List<SurfPaddleBlog.Models.Blog>
 
 @{
     ViewBag.Title = "Details";
@@ -9,37 +9,47 @@
 <div class="container float: center">
     <div class="row">
         <div class="col-xs-8 col-xs-offset-1">
-            <h2>@Model.Title</h2>
-            <p><img class="img img-circle" src="@Model.AuthorPictureUrl" height="50" width="50"> &nbsp;@Model.Author</p>
+            <h2>@Model[ViewBag.ShownBlogId].Title</h2>
+            <p><img class="img img-circle" src="@Model[ViewBag.ShownBlogId].AuthorPictureUrl" height="50" width="50"> &nbsp;@Model[ViewBag.ShownBlogId].Author</p>
         </div>
         <div class="col-xs-4">
-            <img class="img img-circle" src="@Model.AuthorPictureUrl" height="100" width="100">
-            <p>@Model.Author</p><p>More stuff yay</p>
+            <img class="img img-circle" src="@Model[ViewBag.ShownBlogId].AuthorPictureUrl" height="100" width="100">
+            <p>@Model[ViewBag.ShownBlogId].Author</p><p>More stuff yay</p>
         </div>
     </div>
 
     <div class="row">
         <div class="col-xs-8 col-xs-offset-1">
-            <p>@Model.Body1</p><h3>| @Model.BigMiddleText</h3>
+            <p>@Model[ViewBag.ShownBlogId].Body1</p><h3>| @Model[ViewBag.ShownBlogId].BigMiddleText</h3>
         </div>
         <div class="col-xs-4">
-            <img class="adimage" src="@Model.AdPictureUrl" alt="">
+            <img class="adimage" src="@Model[ViewBag.ShownBlogId].AdPictureUrl" alt="">
         </div>
     </div>
 
     <div class="row">
         <div class="col-xs-8 col-xs-offset-1">
-            <p>@Model.Body2</p>
+            <p>@Model[ViewBag.ShownBlogId].Body2</p>
         </div>
         <div class="col-xs-4">
-            <h4>@Model.SideBarTitle</h4>
-            <p>@Model.SideBarBody</p>
+            <h4>@Model[ViewBag.ShownBlogId].SideBarTitle</h4>
+            <p>@Model[ViewBag.ShownBlogId].SideBarBody</p>
             @Html.ActionLink("New Post", "Create")
             <br />
-            @Html.ActionLink("Edit Post", $"Edit/{Model.Id}")
+            @Html.ActionLink("Edit Post", $"Edit/{Model[ViewBag.ShownBlogId].Id}")
             <br />
-            @Html.ActionLink("Delete Post", $"Delete/{Model.Id}")
+            @Html.ActionLink("Delete Post", $"Delete/{Model[ViewBag.ShownBlogId].Id}")
 
+        </div>
+        <div class="float: right">
+                @if(ViewBag.ShownBlogId - 1 >= 0)
+                {
+                    <a href="Blogs/Details/@(ViewBag.ShownBlogId - 1)" class="Button">Previous</a>
+                }
+                @if(ViewBag.ShownBlogId + 1 <= Model.Count() - 1)
+                { 
+                    <a href="Blogs/Details/@(ViewBag.ShownBlogId + 1)" class="Button">Next</a>
+                }
         </div>
     </div>
 </div>

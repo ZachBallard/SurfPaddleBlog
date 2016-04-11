@@ -28,12 +28,17 @@ namespace SurfPaddleBlog.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+           
             Blog blog = db.Blogs.Find(id);
             if (blog == null)
             {
                 return HttpNotFound();
             }
-            return View(blog);
+            ViewBag.ShownBlogId = "ShownBlogId";
+            ViewBag.ShownBlogId = blog.Id;
+
+            var blogList = db.Blogs.OrderByDescending(x => x.PostTime).ToList();
+            return View(blogList);
         }
 
         // GET: Blogs/Create
